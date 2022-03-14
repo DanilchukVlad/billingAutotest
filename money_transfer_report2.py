@@ -8,7 +8,7 @@ from selenium.webdriver.chrome.options import Options
 
 chrome_options = Options()
 chrome_options.add_argument("--headless")
-driver = webdriver.Chrome(chrome_options=chrome_options, executable_path='/home/butovich_v/workspace/billingAutotest/selenium/chromedriver_lnx')
+driver = webdriver.Chrome(chrome_options=chrome_options, executable_path='/home/butovich_v/workspace/billingAutotest/driver/chromedriver_lnx')
 
 time.sleep(5)
 
