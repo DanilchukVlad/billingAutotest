@@ -17,7 +17,7 @@ authorize(driver, 'https://bill.bezlimit.ru/site/login', 'loginform-username', '
 
 time.sleep(5)
 
-driver.get(f'https://bill.bezlimit.ru/finance/plus/index?PlusSearch%5Bid%5D=&PlusSearch%5Bphone_number%5D=&PlusSearch%5Baccount_id%5D=&PlusSearch%5BanyPayment%5D=&PlusSearch%5Bdate%5D%5B0%5D=&PlusSearch%5Bdate%5D%5B1%5D=&PlusSearch%5Bdescription%5D=&PlusSearch%5Bpayment_category_id%5D=15&PlusSearch%5Bcreated%5D%5B0%5D={datetime.date.today()}&PlusSearch%5Bcreated%5D%5B1%5D=&PlusSearch%5Buser%5D=&PlusSearch%5Bpay_type%5D=&PlusSearch%5Bpay_system%5D=')
+driver.get(f'https://bill.bezlimit.ru/finance/plus/index?PlusSearch%5Bid%5D=&PlusSearch%5Bphone_number%5D=&PlusSearch%5Baccount_id%5D=&PlusSearch%5BanyPayment%5D=&PlusSearch%5Bdate%5D%5B0%5D=&PlusSearch%5Bdate%5D%5B1%5D=&PlusSearch%5Bdescription%5D=&PlusSearch%5Bpayment_category_id%5D=1004&PlusSearch%5Bcreated%5D%5B0%5D={datetime.date.today()}&PlusSearch%5Bcreated%5D%5B1%5D=&PlusSearch%5Buser%5D=&PlusSearch%5Bpay_type%5D=&PlusSearch%5Bpay_system%5D=')
 
 time.sleep(5)
 
@@ -38,7 +38,7 @@ def payment_sum(counter, summ, counter1):
         summa = int(get_element(driver, xpath_summa))
         summ += summa
         counter += 1
-        message_sum = 'С номера ' + str(i) + ' перевели деньги более '+ str(counter1) + ' раз! Сумма переводов: ' + str(summ) + ' руб.!\n------------------------------------------------\n'
+        message_sum = 'На номер ' + str(i) + ' перевели деньги более '+ str(counter1) + ' раз! Сумма переводов: ' + str(summ) + ' р.!\n------------------------------------------------\n'
     return message_sum
 
 
@@ -75,15 +75,14 @@ fuck_number_list = test(number_list)
 if fuck_number_list == {}:
     driver.quit()
 else:
-    message = f'\nВНИМАНИЕ!\nАномалия при переводе средств на номер!\n------------------------------------------------\n'
+    message = f'ВНИМАНИЕ!\nАномалия при переводе средств на номер!\n------------------------------------------------\n'
 
     count2 = 1
     total_sum = 0
     count3 = 0
 
     for i in set(fuck_number_list):
-        driver.get(f'https://bill.bezlimit.ru/finance/plus/index?PlusSearch%5Bid%5D=&PlusSearch%5Bphone_number%5D='+str(i)+'&PlusSearch%5Baccount_id%5D=&PlusSearch%5BanyPayment%5D=&PlusSearch%5Bdate%5D%5B0%5D=&PlusSearch%5Bdate%5D%5B1%5D=&PlusSearch%5Bdescription%5D=&PlusSearch%5Bpayment_category_id%5D=15&PlusSearch%5Bcreated%5D%5B0%5D=' + str(datetime.date.today()) + '&PlusSearch%5Bcreated%5D%5B1%5D=&PlusSearch%5Buser%5D=&PlusSearch%5Bpay_type%5D=&PlusSearch%5Bpay_system%5D=')
-
+        driver.get(f'https://bill.bezlimit.ru/finance/plus/index?PlusSearch%5Bid%5D=&PlusSearch%5Bphone_number%5D=' + str(i) + '&PlusSearch%5Baccount_id%5D=&PlusSearch%5BanyPayment%5D=&PlusSearch%5Bdate%5D%5B0%5D=&PlusSearch%5Bdate%5D%5B1%5D=&PlusSearch%5Bdescription%5D=&PlusSearch%5Bpayment_category_id%5D=1004&PlusSearch%5Bcreated%5D%5B0%5D=' + str(datetime.date.today()) + '&PlusSearch%5Bcreated%5D%5B1%5D=&PlusSearch%5Buser%5D=&PlusSearch%5Bpay_type%5D=&PlusSearch%5Bpay_system%5D=')
         time.sleep(6)
 
         message += payment_sum(count2, total_sum, count3)
