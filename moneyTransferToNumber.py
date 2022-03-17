@@ -6,6 +6,7 @@ import requests
 from billing.billing_function import get_element
 from selenium.webdriver.chrome.options import Options
 import datetime
+from telegram_pack.send_telegram import send_to_telegram
 
 chrome_options = Options()
 chrome_options.add_argument("--headless")
@@ -38,28 +39,15 @@ def payment_sum(counter, summ, counter1):
         summa = int(get_element(driver, xpath_summa))
         summ += summa
         counter += 1
-        message_sum = 'На номер ' + str(i) + ' перевели деньги более '+ str(counter1) + ' раз! Сумма переводов: ' + str(summ) + ' р.!\n------------------------------------------------\n'
+        message_sum = 'На номер [' + str(i) + '](https://bill.bezlimit.ru/phone/card/view/' + str(i) + ') перевели деньги более '+ str(counter1) + ' раз! Сумма переводов: ' + str(summ) + ' р.!\n-------------------------\n'
     return message_sum
-
-
-def send_message(text: str):
-    token = '1388568494:AAFZCASLFx64WZnpQLyqmBjht66Y3LU9xEI'
-    url = "https://api.telegram.org/bot"
-    channel_id = -1001178910709
-    url += token
-    method = url + "/sendMessage"
-
-    r = requests.post(method, data={
-         "chat_id": channel_id,
-         "text": text
-          })
 
 
 number_list = []
 
 count1 = 1
 
-while True:
+for i in range(1, 51):
     xpath_number = '//*[@id="w0"]/table/tbody/tr['+str(count1)+']/td[2]/a'
     try:
         element = driver.find_element_by_xpath(xpath_number)
@@ -69,13 +57,52 @@ while True:
     number_list.append(int(number))
     count1 += 1
 
+if count1 == 50:
+    try:
+        button = driver.find_element_by_xpath('//*[@id="w0"]/ul/li[4]/a')
+    except NoSuchElementException:
+        time.sleep(1)
+    button.click()
+
+    count1 = 1
+
+    for i in range(1, 51):
+        xpath_number = '//*[@id="w0"]/table/tbody/tr['+str(count1)+']/td[2]/a'
+        try:
+            element = driver.find_element_by_xpath(xpath_number)
+        except NoSuchElementException:
+            break
+        number = str(get_element(driver, xpath_number))
+        number_list.append(int(number))
+        count1 += 1
+
+if count1 == 50:
+    try:
+        button = driver.find_element_by_xpath('//*[@id="w0"]/ul/li[5]/a')
+    except NoSuchElementException:
+        time.sleep(1)
+    button.click()
+
+    count1 = 1
+
+    for i in range(1, 51):
+        xpath_number = '//*[@id="w0"]/table/tbody/tr['+str(count1)+']/td[2]/a'
+        try:
+            element = driver.find_element_by_xpath(xpath_number)
+        except NoSuchElementException:
+            break
+        number = str(get_element(driver, xpath_number))
+        number_list.append(int(number))
+        count1 += 1
 
 fuck_number_list = test(number_list)
+
+print(fuck_number_list)
 
 if fuck_number_list == {}:
     driver.quit()
 else:
-    message = f'ВНИМАНИЕ!\nАномалия при переводе средств на номер!\n------------------------------------------------\n'
+    message = f'ВНИМАНИЕ!\nАномалия при переводе средств на номер!\n-------------------------\n'
 
     count2 = 1
     total_sum = 0
@@ -89,6 +116,6 @@ else:
 
     print(message)
 
-    send_message(message)
+    send_to_telegram(message)
 
     driver.quit()

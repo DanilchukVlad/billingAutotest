@@ -30,4 +30,20 @@ def send_photo(text: str, link: str, channel_id: int):
           })
 
 
+def send_to_telegram(text):
+    url = "https://api.telegram.org/bot1388568494:AAFZCASLFx64WZnpQLyqmBjht66Y3LU9xEI/sendMessage"
 
+    payload = {
+        "text": text,
+        "parse_mode": "Markdown",
+        "disable_web_page_preview": False,
+        "disable_notification": False,
+        "chat_id": "-1001178910709"
+    }
+    headers = {
+        "Accept": "application/json",
+        "User-Agent": "Telegram Bot SDK - (https://github.com/irazasyed/telegram-bot-sdk)",
+        "Content-Type": "application/json"
+    }
+
+    response = requests.request("POST", url, json=payload, headers=headers)
