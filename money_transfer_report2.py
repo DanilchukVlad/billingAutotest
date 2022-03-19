@@ -34,7 +34,7 @@ def send_message(text: str):
 
 payments = str(get_element(driver, xpath_column_remittance))
 
-if get_element(driver, xpath_column_remittance) >= 50:
+if get_element(driver, xpath_column_remittance) >= 20000:
 
     channel_id = -1001414238186
 
