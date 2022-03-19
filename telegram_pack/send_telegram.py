@@ -38,7 +38,7 @@ def send_to_telegram(text):
         "parse_mode": "Markdown",
         "disable_web_page_preview": False,
         "disable_notification": False,
-        "chat_id": "-1001178910709"
+        "chat_id": "-1001414238186"
     }
     headers = {
         "Accept": "application/json",

@@ -22,7 +22,7 @@ driver.get('https://bill.bezlimit.ru/report/monitoring')
 def send_message(text: str):
     token = '1388568494:AAFZCASLFx64WZnpQLyqmBjht66Y3LU9xEI'
     url = "https://api.telegram.org/bot"
-    channel_id = -1001178910709
+    channel_id = -1001414238186
     url += token
     method = url + "/sendMessage"
 
@@ -34,9 +34,9 @@ def send_message(text: str):
 
 payments = str(get_element(driver, xpath_column_remittance))
 
-if get_element(driver, xpath_column_remittance) >= 20000:
+if get_element(driver, xpath_column_remittance) >= 50:
 
-    channel_id = -1001178910709
+    channel_id = -1001414238186
 
     message = f'\nВНИМАНИЕ!\nПодозрительная активность при переводе средств с номера на номер!\n' \
               f'Сумма уже: {payments} руб!'
