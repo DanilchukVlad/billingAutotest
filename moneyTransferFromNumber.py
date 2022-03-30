@@ -116,6 +116,6 @@ else:
 
     print(message)
 
-    send_to_telegram(message)
+    send_to_telegram(message, chat=-1001414238186)
 
     driver.quit()
