@@ -31,15 +31,15 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/billing" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/driver" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/driver" />
       <recent name="$PROJECT_DIR$/billing" />
       <recent name="$PROJECT_DIR$/telegram_pack" />
       <recent name="$PROJECT_DIR$/billing/methods" />
       <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/billing/locators" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
