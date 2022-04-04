@@ -31,22 +31,23 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/driver" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/driver" />
-      <recent name="$PROJECT_DIR$/billing" />
-      <recent name="$PROJECT_DIR$/telegram_pack" />
-      <recent name="$PROJECT_DIR$/billing/methods" />
       <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/billing" />
+      <recent name="$PROJECT_DIR$/billing/locators" />
+      <recent name="$PROJECT_DIR$/driver" />
+      <recent name="$PROJECT_DIR$/telegram_pack" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/driver" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.moneyTransferToNumber">
+  <component name="RunManager" selected="Python tests.Python tests for catalog_test.Test.test_check_phone_number_filter_with_one_valid_number_at_catalog">
     <configuration name="moneyTransferToNumber" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="billingAutotest" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -89,8 +90,53 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="Python tests for catalog_test.Test.test_check_phone_number_filter_with_one_valid_number_at_catalog" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="billingAutotest" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/billing_regress/billTest" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;catalog_test.Test.test_check_phone_number_filter_with_one_valid_number_at_catalog&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Python tests for dashboard_test.Test" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="billingAutotest" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/billing_regress/billTest" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;dashboard_test.Test&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Python tests for dashboard_test.Test.test_can_open_dashboard_page" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="billingAutotest" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/billing_regress/billTest" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;dashboard_test.Test.test_can_open_dashboard_page&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python tests.Python tests for catalog_test.Test.test_check_phone_number_filter_with_one_valid_number_at_catalog" />
+        <item itemvalue="Python tests.Python tests for dashboard_test.Test" />
+        <item itemvalue="Python tests.Python tests for dashboard_test.Test.test_can_open_dashboard_page" />
         <item itemvalue="Python.moneyTransferToNumber" />
         <item itemvalue="Python.report7_test" />
       </list>
